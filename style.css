@@ -16,7 +16,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
 }
 
 body {
@@ -50,7 +49,7 @@ h2 {
   margin-bottom: 0;
 }
 
-h2:lang(ja) {
+h2.alt-lang {
   font-size: 1.25rem;
   margin-top: 0.5rem;
   margin-bottom: 10rem;
@@ -116,8 +115,9 @@ header {
 }
 
 header p.keep-reading {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 700;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 
@@ -143,8 +143,8 @@ header h1:nth-child(1) {
   font-size: 3rem;
 }
 
-header h1:nth-child(2) {
-  font-size: 2rem;
+header h1.alt-lang {
+  font-size: 1.5rem;
 }
 
 @media screen and (min-width: 414px) {
@@ -183,41 +183,12 @@ header .container p {
   }
 }
 
-/* Sections */
-@media screen and (min-width: 1024px) {
-  section.flex {
-    display: flex;
-    gap: 10vw;
-  }
-
-  /* .fifty {
-    width: 50%;
-  } */
-
-  .left {
-    margin-right: var(--gap-grid);
-    width: 40%;
-  }
-
-  .right {
-    margin-left: var(--gap-grid);
-    width: 60%;
-  }
-}
-
 /* Grid */
 .grid {
   display: grid;
   row-gap: 10vh;
   grid-template-columns: repeat(9, 1fr);
   column-gap: var(--gap-grid);
-}
-
-@media screen and (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(9, 1fr);
-    row-gap: 16vh;
-  }
 }
 
 /* Pumpkin (replacement image) */
@@ -257,13 +228,13 @@ header .container p {
 }
 
 /* "Our biggest inspiration..." */
-.grid .pquote:first-of-type {
+.grid #inspiration-quote {
   grid-column: 1/10;
   grid-row: 3;
   text-align: right;
 }
 @media screen and (min-width: 1024px) {
-  .grid .pquote:first-of-type {
+  .grid #inspiration-quote {
     grid-column: 5/10;
     grid-row: 2;
     text-align: right;
@@ -309,12 +280,12 @@ header .container p {
 }
 
 /* "We celebrate and highlight... */
-.grid .pquote:last-of-type {
+.grid #celebrate-quote {
   grid-column: 1/10;
   grid-row: 6;
 }
 @media screen and (min-width: 1024px) {
-  .grid .pquote:last-of-type {
+  .grid #celebrate-quote {
     grid-column: 1/6;
     grid-row: 5;
     margin-top: 8rem;
@@ -324,13 +295,12 @@ header .container p {
 
 /* Frame */
 .grid img[data-src$="2D0A2472-20_fBibcXxb9D.jpg"] {
-  /* margin-top: var(--gap-grid); */
   grid-column: 1/4;
   grid-row: 7;
 }
 @media screen and (min-width: 1024px) {
   .grid img[data-src$="2D0A2472-20_fBibcXxb9D.jpg"] {
-    /* margin-top: var(--gap-grid); */
+    margin-top: calc(-4 * var(--gap-grid));
     grid-column: 7/10;
     grid-row: 6;
   }
@@ -345,6 +315,45 @@ header .container p {
   .grid img[data-src$="2D0A2441-4_n6BVgyL8bd.jpg"] {
     grid-column: 1/5;
     grid-row: 6;
+  }
+}
+
+/* Okinawa */
+.grid .textual {
+  grid-column: 1/10;
+  grid-row: 1;
+}
+@media screen and (min-width: 1024px) {
+  .grid .textual {
+    grid-column: 1/4;
+    grid-row: 1/3;
+  }
+}
+
+/* Okinawa fruit */
+.grid img[data-src$="2D0A2594-1_-Kdofz6l3.jpg"] {
+  grid-column: 2/10;
+  grid-row: 2;
+}
+@media screen and (min-width: 1024px) {
+  .grid img[data-src$="2D0A2594-1_-Kdofz6l3.jpg"] {
+    grid-column: 5/10;
+    grid-row: 2;
+  }
+}
+
+/* "Okinawa is the... */
+.grid #okinawa-quote {
+  grid-column: 1/10;
+  grid-row: 3;
+  text-align: left;
+}
+@media screen and (min-width: 1024px) {
+  .grid #okinawa-quote {
+    grid-column: 6/10;
+    grid-row: 1;
+    margin-top: 2rem;
+    /* margin-bottom: 8rem; */
   }
 }
 
